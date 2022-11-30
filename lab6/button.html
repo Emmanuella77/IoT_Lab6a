@@ -1,0 +1,146 @@
+<!-- HTML !-->
+<!DOCTYPE html>
+<HTML>
+<head>
+  <link rel="stylesheet" href="style.css">
+  <title>water level</title>
+  <style>
+
+ 
+
+
+  
+    </style></head>
+</head>
+<body>
+
+    <h1 style="color: rgb(14, 67, 62);">Levels</h1>
+  <h1 text-align= "center"> </h1>
+  <p style="font-size: 120%;"></p>
+
+
+
+
+
+<body>
+
+ 
+
+<button class="button-1" role="button" name = "ESP1Temp" onclick= "updateByAJAX_ESP1Temp()"> ESP 1: Temperature</button>
+<div id="esp1Temp" ></div>
+
+ 
+                      
+<br>
+<br>
+ 
+<button class="button-1" role="button" name = "ESP1Humid" onclick= "updateByAJAX_ESP1Humid()">ESP 1: Humidity</button>
+<div id="esp1Humid" ></div> 
+
+<br>
+<br>
+
+<button class="button-1" role="button" name = "ESP1Distance" onclick= "updateByAJAX_ESP1Distance()">ESP 1: Distance</button>
+<div id="esp1Distance" ></div> 
+
+<br>
+<br>
+
+<button class="button-2" role="button" name = "ESP2Temp" onclick= "updateByAJAX_ESP2Temp()">ESP 2: Temperature</button>
+<div id="esp2Temp" ></div> 
+
+<br>
+<br>
+
+<button class="button-2" role="button" name = "ESP2Humid" onclick= "updateByAJAX_ESP2Humid()">ESP 2: Humidity</button>
+<div id="esp2Humid" ></div> 
+
+<br>
+<br>
+
+<button class="button-2" role="button" name = "ESP2Distance" onclick= "updateByAJAX_ESP2Distance()">ESP 2: Distance</button>
+<div id="esp2Distance" ></div> 
+
+<br>
+<br>
+
+
+<br>
+<br>
+
+
+<script type="text/javascript">
+
+    function updateByAJAX_ESP1Temp(){
+      const xhttp=new XMLHttpRequest();
+      xhttp.onload=function(){
+        document.getElementById("esp1Temp").innerText=this.responseText;
+      }
+      
+      xhttp.open("GET", "http://localhost/lab6/Retrievinglevel.php?");
+      xhttp.send();
+    }
+
+    function updateByAJAX_ESP1Humid(){
+      const xhttp=new XMLHttpRequest();
+      xhttp.onload=function(){
+        document.getElementById("esp1Humid").innerText=this.responseText;
+      }
+      
+      xhttp.open("GET", "http://localhost/lab6/Retrievinglevel2.php?");
+      xhttp.send();
+    }
+
+    function updateByAJAX_ESP1Distance(){
+      const xhttp=new XMLHttpRequest();
+      xhttp.onload=function(){
+        document.getElementById("esp1Distance").innerText=this.responseText;
+      }
+      
+      xhttp.open("GET", "http://localhost/lab6/Retrievinglevel3.php?");
+      xhttp.send();
+    }
+
+</script>
+
+
+
+<script type="text/javascript">
+
+    function updateByAJAX_ESP2Temp(){
+          const xhttp=new XMLHttpRequest();
+          xhttp.onload=function(){
+            document.getElementById("esp2Temp").innerText=this.responseText;
+          }
+          
+          xhttp.open("GET", "http://localhost/lab6/RetrievinglevelESP2.php?");
+          xhttp.send();
+        }
+    
+  
+    
+    function updateByAJAX_ESP2Humid(){
+        const xhttp=new XMLHttpRequest();
+        xhttp.onload=function(){
+            document.getElementById("esp2Humid").innerText=this.responseText;
+          }
+          
+          xhttp.open("GET", "http://localhost/lab6/Retrievinglevel2ESP2.php?");
+          xhttp.send();
+        }
+    
+        function updateByAJAX_ESP2Distance(){
+        const xhttp=new XMLHttpRequest();
+        xhttp.onload=function(){
+            document.getElementById("esp2Distance").innerText=this.responseText;
+          }
+          
+          xhttp.open("GET", "http://localhost/lab6/Retrievinglevel3ESP2.php?");
+          xhttp.send();
+        }
+    
+    
+    </script>
+
+</body>
+</HTML>
